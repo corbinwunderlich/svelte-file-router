@@ -39,6 +39,12 @@
                 extensions = "\\.(?:js|svelte|ts|css)$";
               };
             };
+
+            tests = {
+              enable = true;
+              entry = "npm run test";
+              pass_filenames = false;
+            };
           };
         };
 
