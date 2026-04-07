@@ -16,7 +16,7 @@
          * Return type for eager import.meta.glob
          * @example
          * ```js
-         * import.meta.glob("routes/*.ts", { eager: true });
+         * import.meta.glob("routes/*.svelte", { eager: true });
          * ```
          */
         files: RouteComponentType;
