@@ -2,7 +2,7 @@ import { initCore, location, type InitOptions, type Hash } from "@svelte-router/
 
 export let initialized = false;
 
-export function init(options: Omit<InitOptions, "defaultHash"> & {
+export function init(options?: Omit<InitOptions, "defaultHash"> & {
     defaultHash?: Exclude<Hash, true | string>;
 }) {
     if (options?.defaultHash !== false && options?.defaultHash !== undefined) {

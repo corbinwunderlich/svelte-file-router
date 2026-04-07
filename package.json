@@ -1,6 +1,6 @@
 {
     "name": "svelte-file-router",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "license": "AGPLv3",
     "scripts": {
         "dev": "vite dev",
