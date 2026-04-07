@@ -1,4 +1,4 @@
-import { initCore, location, type InitOptions, type Hash } from "@svelte-router/core";
+import { initCore, type InitOptions, type Hash, LocationLite, StockHistoryApi } from "@svelte-router/core";
 
 export let initialized = false;
 
@@ -14,7 +14,7 @@ export function init(options?: Omit<InitOptions, "defaultHash"> & {
 
     basePath = options?.basePath ?? "./routes";
 
-    const core = initCore(location, {
+    const core = initCore(new LocationLite(new StockHistoryApi()), {
         defaultHash: false,
         disallowHashRouting: true,
         ...options
