@@ -51,13 +51,6 @@ function getRouteFromPath(path: string) {
     return basePath;
 }
 
-/**
- * Return type for eager import.meta.glob
- * Example:
- * ```js
- * import.meta.glob("routes/*.ts", { eager: true });
- * ```
- */
 export type RouteComponentType = Record<string, { default: Component } & Record<string, unknown>>;
 
 export function getRoutes(files: () => RouteComponentType) {

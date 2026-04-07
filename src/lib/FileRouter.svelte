@@ -11,7 +11,18 @@
         );
     }
 
-    let { files }: { files: RouteComponentType } = $props();
+    type Props = {
+        /**
+         * Return type for eager import.meta.glob
+         * @example
+         * ```js
+         * import.meta.glob("routes/*.ts", { eager: true });
+         * ```
+         */
+        files: RouteComponentType;
+    };
+
+    let { files }: Props = $props();
 
     const { parentRouter, routers, routes } = $state(getRoutes(() => files));
 </script>
