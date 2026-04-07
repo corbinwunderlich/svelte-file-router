@@ -31,5 +31,5 @@ In the root component, like `App.svelte` or similar:
     let files = import.meta.glob("routes/**/*.svelte", { eager: true });
 </script>
 
-<FileRouter files />
+<FileRouter {files} />
 ```
