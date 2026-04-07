@@ -51,7 +51,7 @@ function getRouteFromPath(path: string) {
     return basePath;
 }
 
-export type RouteComponentType = Record<string, { default?: Component } & unknown>;
+export type RouteComponentType = Record<string, unknown>;
 
 export function getRoutes(files: () => RouteComponentType) {
     const routes: Record<string, Component> = {};
@@ -60,7 +60,13 @@ export function getRoutes(files: () => RouteComponentType) {
     const routers: Record<string, RouterEngine> = {};
 
     for (const route in files()) {
-        const component = files()[route].default;
+        const importedModule = files()[route];
+
+        if (typeof importedModule !== "object") {
+            throw new Error("Non-component imported as part of file router. Check your glob import to make sure you are only importing svelte components.");
+        }
+
+        const component = (<any>files()[route]).default as Component;
 
         if (!component) {
             throw new Error("Non-component imported as part of file router. Check your glob import to make sure you are only importing svelte components.");
