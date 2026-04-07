@@ -51,7 +51,7 @@ function getRouteFromPath(path: string) {
     return basePath;
 }
 
-export type RouteComponentType = Record<string, { default?: Component } & Record<string, unknown>>;
+export type RouteComponentType = Record<string, { default?: Component } & unknown>;
 
 export function getRoutes(files: () => RouteComponentType) {
     const routes: Record<string, Component> = {};
