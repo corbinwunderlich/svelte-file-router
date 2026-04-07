@@ -4,6 +4,8 @@ import { RouterEngine } from "@svelte-router/core";
 
 import { basename, dirname } from "path-browserify";
 
+import { basePath as baseRoutesPath } from "./init.ts";
+
 function getParamsFromRoute(route: string): string[] {
     const params: string[] = [];
     const regex = /\/:([a-zA-Z_][a-zA-Z0-9_]*)/g;
@@ -17,8 +19,6 @@ function getParamsFromRoute(route: string): string[] {
 }
 
 function getRouteFromPath(path: string) {
-    const baseRoutesPath = "./routes";
-
     let basePath = path.startsWith(baseRoutesPath) ?
             path.substring(baseRoutesPath.length) :
         path;

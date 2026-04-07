@@ -9,7 +9,8 @@ Initialize the library in `main.js` or similar, before any FileRouter is mounted
 ```js
 import { init } from "svelte-router-file";
 
-init(/* opts */);
+/* basePath is set to ./routes if not specified */
+init({ basePath: "./myroutes" });
 ```
 
 Initializing this library means that you should not call the usual `init()` function of `@svelte-router/core`.
@@ -27,7 +28,7 @@ In the root component, like `App.svelte` or similar:
 <script lang="ts">
     import { FileRouter } from "svelte-router-file";
 
-    let files = import.meta.glob("routes/**/*.ts");
+    let files = import.meta.glob("routes/**/*.svelte");
 </script>
 
 <FileRouter files />
