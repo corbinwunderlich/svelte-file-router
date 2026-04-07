@@ -7,7 +7,7 @@ This is a plugin package for [@svelte-router/core](https://github.com/WJSoftware
 Initialize the library in `main.js` or similar, before any FileRouter is mounted:
 
 ```js
-import { init } from "svelte-file-router";
+import { init } from "svelte-router-file";
 
 init(/* opts */);
 ```
@@ -25,7 +25,7 @@ In the root component, like `App.svelte` or similar:
 
 ```svelte
 <script lang="ts">
-    import { FileRouter } from "svelte-file-router";
+    import { FileRouter } from "svelte-router-file";
 
     let files = import.meta.glob("routes/**/*.ts");
 </script>

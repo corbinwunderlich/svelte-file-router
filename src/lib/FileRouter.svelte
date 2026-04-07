@@ -7,7 +7,7 @@
 
     if (!initialized) {
         throw new Error(
-            "Before mounting a FileRouter, you must call init() from svelte-file-router"
+            "Before mounting a FileRouter, you must call init() from svelte-router-file"
         );
     }
 
