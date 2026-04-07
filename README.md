@@ -1,5 +1,9 @@
 # What this is
 This is a plugin package for [@svelte-router/core](https://github.com/WJSoftware/svelte-router), which should be installed. It follows the routing format established by [sv-router](https://sv-router.vercel.app/guide/file-based/route-definition).
+# Installation
+```bash
+npm i svelte-router-file
+```
 # Usage
 1. Initialize the library
 2. Mount the FileRouter
