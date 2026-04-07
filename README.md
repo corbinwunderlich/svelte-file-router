@@ -28,7 +28,7 @@ In the root component, like `App.svelte` or similar:
 <script lang="ts">
     import { FileRouter } from "svelte-router-file";
 
-    let files = import.meta.glob("routes/**/*.svelte");
+    let files = import.meta.glob("routes/**/*.svelte", { eager: true });
 </script>
 
 <FileRouter files />
