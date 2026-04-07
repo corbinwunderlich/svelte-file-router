@@ -35,7 +35,7 @@
             eslint = {
               enable = true;
               settings = {
-                binPath = "./node_modules/.bin/eslint --cache --concurrency auto";
+                binPath = "./node_modules/.bin/eslint --concurrency auto";
                 extensions = "\\.(?:js|svelte|ts|css)$";
               };
             };

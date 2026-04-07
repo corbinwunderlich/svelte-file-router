@@ -1,51 +1,65 @@
 {
-  "name": "svelte-file-router",
-  "version": "1.0.0",
-  "description": "An extension for @svelte-router/core that creates a file-based router",
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
+    "name": "svelte-file-router",
+    "version": "0.0.0",
+    "license": "AGPLv3",
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build && npm run prepack",
+        "preview": "vite preview",
+        "prepare": "svelte-kit sync || echo ''",
+        "prepack": "svelte-kit sync && svelte-package && publint",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    },
+    "files": [
+        "dist",
+        "!dist/**/*.test.*",
+        "!dist/**/*.spec.*"
+    ],
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "svelte": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "svelte": "./dist/index.js"
+        }
+    },
+    "peerDependencies": {
+        "@svelte-router/core": "^1.0.7",
+        "svelte": "^5.0.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@eslint/json": "^1.2.0",
+        "@stylistic/eslint-plugin": "^5.10.0",
+        "@sveltejs/adapter-auto": "^7.0.0",
+        "@sveltejs/kit": "^2.50.2",
+        "@sveltejs/package": "^2.5.7",
+        "@sveltejs/vite-plugin-svelte": "^6.2.4",
+        "@types/path-browserify": "^1.0.3",
+        "eslint": "^10.2.0",
+        "eslint-config-flat-gitignore": "^2.3.0",
+        "eslint-plugin-svelte": "^3.17.0",
+        "jiti": "^2.6.1",
+        "publint": "^0.3.17",
+        "svelte": "^5.54.0",
+        "svelte-check": "^4.4.2",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.58.0",
+        "vite": "^7.3.1"
+    },
+    "keywords": [
+        "svelte",
+        "router",
+        "routing",
+        "svelte-router",
+        "file-router"
+    ],
+    "dependencies": {
+        "path-browserify": "^1.0.1"
     }
-  },
-  "type": "module",
-  "scripts": {
-    "build": "vite build"
-  },
-  "author": "Corbin Wunderlich",
-  "license": "AGPLv3",
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@eslint/json": "^1.2.0",
-    "@stylistic/eslint-plugin": "^5.10.0",
-    "@sveltejs/vite-plugin-svelte": "^7.0.0",
-    "@tsconfig/svelte": "^5.0.8",
-    "@types/node": "^25.5.0",
-    "@types/path-browserify": "^1.0.3",
-    "create-vite": "^9.0.1",
-    "eslint": "^10.0.3",
-    "eslint-config-flat-gitignore": "^2.3.0",
-    "eslint-plugin-svelte": "^3.15.2",
-    "jiti": "^2.6.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.0",
-    "vite": "^8.0.0"
-  },
-  "peerDependencies": {
-    "@svelte-router/core": "^1.0.7",
-    "svelte": "^5.53.11"
-  },
-  "keywords": [
-    "svelte",
-    "router",
-    "routing",
-    "file-based",
-    "svelte-router"
-  ],
-  "dependencies": {
-    "path-browserify": "^1.0.1"
-  }
 }

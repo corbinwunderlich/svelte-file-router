@@ -1,21 +1,15 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
-  "compilerOptions": {
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "target": "es2015",
-    "moduleResolution": "nodenext",
-    "lib": ["es2021"],
-    "types": ["svelte", "vite/client"],
-    "strict": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "allowJs": true,
-    "checkJs": true,
-    "moduleDetection": "force",
-    "rewriteRelativeImportExtensions": true,
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true
-  },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"rewriteRelativeImportExtensions": true,
+		"allowJs": true,
+		"checkJs": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext"
+	}
 }
